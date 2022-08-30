@@ -9,4 +9,9 @@ class Cliente_model extends CI_Model {
 		$this->db->from('cliente');//tabla
 		return $this->db->get();//devolucion del resultado de la consulta
 	}
+	public function agregarcliente($data)
+	{
+		$this->db->insert('cliente',$data);//insert
+	}
+
 }
