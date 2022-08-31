@@ -1,11 +1,16 @@
  <div class="container">   
   <div class="row">
     <div class="col-md-12">
+      <h1>Lista de clientes</h1>
 
     <?php  echo form_open_multipart('cliente/agregar'); ?> 
-    <button type="submit" class="btn btn-primary">AGREGAR CLIENTE</button>
-
+    <button type="submit" class="btn btn-primary btn-lg ">AGREGAR CLIENTE</button>
     <?php echo form_close(); ?>
+    
+     <?php  echo form_open_multipart('cliente/deshabilitados'); ?> 
+    <button type="submit" class="btn btn-warning btn-lg ">VER CLIENTES DESHABILITADOS</button>
+    <?php echo form_close(); ?>
+    <br>
   <table class="table">
   <thead>
     <tr>
@@ -17,7 +22,7 @@
       <th scope="col">Telefono</th>
       <th scope="col">Modificar</th>
       <th scope="col">Eliminar</th>
-
+      <th scope="col">Deshabilitar</th>
     </tr>
   </thead>
   <tbody>
@@ -33,6 +38,7 @@ foreach ($cliente->result() as $row)
       <td><?php echo $row->apellidoMaterno;?></td>
       <td><?php echo $row->direccion;?></td>
       <td><?php echo $row->telefono;?></td>
+
       <td>
         <?php echo form_open_multipart("cliente/modificar") ?>
         <input type="hidden" name="idcliente" value="<?php echo $row->idcliente; ?>">
@@ -44,6 +50,13 @@ foreach ($cliente->result() as $row)
         <?php echo form_open_multipart("cliente/eliminarbd") ?>
         <input type="hidden" name="idcliente" value="<?php echo $row->idcliente; ?>">
         <input type="submit" name="buttonx" value="Eliminar" class="btn btn-danger">
+        <?php echo form_close();?>
+      </td>
+
+      <td>
+        <?php echo form_open_multipart("cliente/deshabilitarbd") ?>
+        <input type="hidden" name="idcliente" value="<?php echo $row->idcliente; ?>">
+        <input type="submit" name="buttonz" value="Deshabilitar" class="btn btn-warning">
         <?php echo form_close();?>
       </td>
 

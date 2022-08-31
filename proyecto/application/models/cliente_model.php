@@ -7,6 +7,7 @@ class Cliente_model extends CI_Model {
 	{
 		$this->db->select('*');//select
 		$this->db->from('cliente');//tabla
+		$this->db->where('estado','1');
 		return $this->db->get();//devolucion del resultado de la consulta
 	}
 
