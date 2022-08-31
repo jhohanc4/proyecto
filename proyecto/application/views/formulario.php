@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-md-12">
 
-      <h2>AGREGAR ESTUDIANTE</h2>
+      <h2>AGREGAR CLIENTE</h2>
     <?php  echo form_open_multipart('cliente/agregarbd'); ?> 
     <input type="text" name="nombres" placeholder="Ingrese su nombre" required>
     <input type="text" name="apellidopaterno" placeholder="Ingrese su apellido paterno" required>
