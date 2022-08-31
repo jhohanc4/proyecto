@@ -9,7 +9,7 @@
     <input type="text" name="apellidomaterno" placeholder="Ingrese su apellido materno">
     <input type="text" name="direccion" placeholder="Ingrese su direccion"required>
     <input type="text" name="telefono" placeholder="Ingrese su numero de telefono" required>
-
+    <br>
     <button type="submit" class="btn btn-primary">AGREGAR CLIENTE</button>
 
     <?php form_close(); ?>

@@ -33,4 +33,11 @@ class Cliente_model extends CI_Model {
 		$this->db->where('idcliente',$idcliente);//(bdd,formulario)
 		$this->db->update('cliente',$data);//update
 	}
+	public function listaclientesdeshabilitados()
+	{
+		$this->db->select('*');//select
+		$this->db->from('cliente');//tabla
+		$this->db->where('estado','0');
+		return $this->db->get();//devolucion del resultado de la consulta
+	}
 }

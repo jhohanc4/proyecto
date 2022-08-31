@@ -12,6 +12,7 @@ class Cliente extends CI_Controller {
 		$this->load->view('lista',$data);
 		$this->load->view('inc/footer');
 	}
+
 	public function agregar()
 	{
 
@@ -19,6 +20,7 @@ class Cliente extends CI_Controller {
 		$this->load->view('formulario');
 		$this->load->view('inc/footer');
 	}
+
 	public function agregarbd()
 	{
 		$data['nombres']=$_POST['nombres'];
@@ -30,12 +32,14 @@ class Cliente extends CI_Controller {
 		$lista=$this->cliente_model->agregarcliente($data);
 		redirect('cliente/index','refresh');
 	}
+
 	public function eliminarbd()
 	{
 		$idcliente=$_POST['idcliente'];
 		$this->cliente_model->eliminarcliente($idcliente);
 		redirect('cliente/index','refresh');
 	}
+
 	public function modificar()
 	{
 		$idcliente=$_POST['idcliente'];
@@ -45,6 +49,7 @@ class Cliente extends CI_Controller {
 		$this->load->view('formulariomodificar',$data);
 		$this->load->view('inc/footer');
 	}
+
 	public function modificarbd()
 	{
 		$idcliente=$_POST['idcliente'];
@@ -58,6 +63,7 @@ class Cliente extends CI_Controller {
 		$this->cliente_model->modificarcliente($idcliente,$data);
 		redirect('cliente/index','refresh');
 	}
+
 	public function deshabilitarbd()
 	{
 		$idcliente=$_POST['idcliente'];
@@ -65,5 +71,24 @@ class Cliente extends CI_Controller {
 
 		$this->cliente_model->modificarcliente($idcliente,$data);
 		redirect('cliente/index','refresh');
+	}
+
+	public function deshabilitados()
+	{
+		$lista=$this->cliente_model->listaclientesdeshabilitados();
+		$data['cliente']=$lista;
+
+		$this->load->view('inc/header');
+		$this->load->view('listadeshabilitados',$data);
+		$this->load->view('inc/footer');
+	}
+
+	public function habilitarbd()
+	{
+		$idcliente=$_POST['idcliente'];
+		$data['estado']='1';
+
+		$this->cliente_model->modificarcliente($idcliente,$data);
+		redirect('cliente/deshabilitados','refresh');
 	}
 }

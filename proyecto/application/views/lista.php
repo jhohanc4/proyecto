@@ -7,10 +7,14 @@
     <button type="submit" class="btn btn-primary btn-lg ">AGREGAR CLIENTE</button>
     <?php echo form_close(); ?>
     
+    <br>
+
      <?php  echo form_open_multipart('cliente/deshabilitados'); ?> 
     <button type="submit" class="btn btn-warning btn-lg ">VER CLIENTES DESHABILITADOS</button>
     <?php echo form_close(); ?>
+    
     <br>
+
   <table class="table">
   <thead>
     <tr>
