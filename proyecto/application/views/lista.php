@@ -25,8 +25,8 @@
       <th scope="col">Direccion</th>
       <th scope="col">Telefono</th>
       <th scope="col">Modificar</th>
-      <th scope="col">Eliminar</th>
       <th scope="col">Deshabilitar</th>
+      <th scope="col">Registrar Motorizado</th>
     </tr>
   </thead>
   <tbody>
@@ -50,17 +50,20 @@ foreach ($cliente->result() as $row)
         <?php echo form_close();?>
       </td>
 
-      <td>
-        <?php echo form_open_multipart("cliente/eliminarbd") ?>
-        <input type="hidden" name="idcliente" value="<?php echo $row->idcliente; ?>">
-        <input type="submit" name="buttonx" value="Eliminar" class="btn btn-danger">
-        <?php echo form_close();?>
-      </td>
+
+
 
       <td>
         <?php echo form_open_multipart("cliente/deshabilitarbd") ?>
         <input type="hidden" name="idcliente" value="<?php echo $row->idcliente; ?>">
         <input type="submit" name="buttonz" value="Deshabilitar" class="btn btn-warning">
+        <?php echo form_close();?>
+      </td>
+
+      <td>
+        <?php echo form_open_multipart("motorizado/registrarmotbd") ?>
+        <input type="hidden" name="idcliente" value="<?php echo $row->idcliente; ?>">
+        <input type="submit" name="buttonz" value="Registrar" class="btn btn-secondary">
         <?php echo form_close();?>
       </td>
 

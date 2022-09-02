@@ -5,20 +5,26 @@ class Cliente extends CI_Controller {
 
 	public function index()
 	{
+		$this->load->view('inc/headersbadmin2');
+		$this->load->view('contenido');
+		$this->load->view('inc/footersbadmin2');
+	}
+	public function index1()
+	{
 		$lista=$this->cliente_model->listaclientes();
 		$data['cliente']=$lista;
 
-		$this->load->view('inc/header');
-		$this->load->view('lista',$data);
-		$this->load->view('inc/footer');
+		$this->load->view('inc/headersbadmin2');
+		$this->load->view('lista.php',$data);
+		$this->load->view('inc/footersbadmin2');
 	}
 
 	public function agregar()
 	{
 
-		$this->load->view('inc/header');
+		$this->load->view('inc/headersbadmin2');
 		$this->load->view('formulario');
-		$this->load->view('inc/footer');
+		$this->load->view('inc/footersbadmin2');
 	}
 
 	public function agregarbd()
@@ -30,14 +36,14 @@ class Cliente extends CI_Controller {
 		$data['telefono']=$_POST['telefono'];
 
 		$lista=$this->cliente_model->agregarcliente($data);
-		redirect('cliente/index','refresh');
+		redirect('cliente/index1','refresh');
 	}
 
 	public function eliminarbd()
 	{
 		$idcliente=$_POST['idcliente'];
 		$this->cliente_model->eliminarcliente($idcliente);
-		redirect('cliente/index','refresh');
+		redirect('cliente/index1','refresh');
 	}
 
 	public function modificar()
@@ -45,9 +51,9 @@ class Cliente extends CI_Controller {
 		$idcliente=$_POST['idcliente'];
 		$data['infocliente']=$this->cliente_model->recuperarcliente($idcliente);
 
-		$this->load->view('inc/header');
+		$this->load->view('inc/headersbadmin2');
 		$this->load->view('formulariomodificar',$data);
-		$this->load->view('inc/footer');
+		$this->load->view('inc/footersbadmin2');
 	}
 
 	public function modificarbd()
@@ -61,7 +67,7 @@ class Cliente extends CI_Controller {
 		$data['telefono']=$_POST['telefono'];
 
 		$this->cliente_model->modificarcliente($idcliente,$data);
-		redirect('cliente/index','refresh');
+		redirect('cliente/index1','refresh');
 	}
 
 	public function deshabilitarbd()
@@ -70,7 +76,7 @@ class Cliente extends CI_Controller {
 		$data['estado']='0';
 
 		$this->cliente_model->modificarcliente($idcliente,$data);
-		redirect('cliente/index','refresh');
+		redirect('cliente/index1','refresh');
 	}
 
 	public function deshabilitados()
@@ -78,9 +84,9 @@ class Cliente extends CI_Controller {
 		$lista=$this->cliente_model->listaclientesdeshabilitados();
 		$data['cliente']=$lista;
 
-		$this->load->view('inc/header');
+		$this->load->view('inc/headersbadmin2');
 		$this->load->view('listadeshabilitados',$data);
-		$this->load->view('inc/footer');
+		$this->load->view('inc/footersbadmin2');
 	}
 
 	public function habilitarbd()
@@ -90,5 +96,20 @@ class Cliente extends CI_Controller {
 
 		$this->cliente_model->modificarcliente($idcliente,$data);
 		redirect('cliente/deshabilitados','refresh');
+	}
+
+	public function prueba()
+	{
+		$this->load->view('inc/headersbadmin2');
+		$this->load->view('index');
+		$this->load->view('inc/footersbadmin2');
+	}
+	public function registrarmotorizado()
+	{
+		$idcliente=$_POST['idcliente'];
+
+		$this->load->view('inc/headersbadmin2');
+		$this->load->view('formularioregistrarvehiculo',$data);
+		$this->load->view('inc/footersbadmin2');
 	}
 }

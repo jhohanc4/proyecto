@@ -4,7 +4,7 @@
       <h1>Lista de clientes dehabilitados</h1>
 
     <?php  echo form_open_multipart('cliente/index'); ?> 
-    <button type="submit" name="buton1" class="btn btn-primary btn-lg ">VER ESTUDIANTES HABILITADOS</button>
+    <button type="submit" name="buton1" class="btn btn-primary btn-lg ">VER CLIENTES HABILITADOS</button>
     <?php echo form_close(); ?>
     
     <br>
