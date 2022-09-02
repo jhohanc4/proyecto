@@ -19,6 +19,15 @@ class Cliente extends CI_Controller {
 		$this->load->view('inc/footersbadmin2');
 	}
 
+public function index2()
+	{
+		$lista=$this->repuesto_model->listarepuesto();
+		$data['producto']=$lista;
+
+		$this->load->view('inc/headersbadmin2');
+		$this->load->view('lista2.php',$data);
+		$this->load->view('inc/footersbadmin2');
+	}
 	public function agregar()
 	{
 
@@ -96,13 +105,6 @@ class Cliente extends CI_Controller {
 
 		$this->cliente_model->modificarcliente($idcliente,$data);
 		redirect('cliente/deshabilitados','refresh');
-	}
-
-	public function prueba()
-	{
-		$this->load->view('inc/headersbadmin2');
-		$this->load->view('index');
-		$this->load->view('inc/footersbadmin2');
 	}
 	public function registrarmotorizado()
 	{

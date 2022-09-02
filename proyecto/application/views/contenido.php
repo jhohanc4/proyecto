@@ -2,22 +2,22 @@
         <!-- Sidebar -->
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
-            <!-- Sidebar - Brand -->
+            <!-- Sidebar - Brand 
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
-            </a>
+                <div class="sidebar-brand-text mx-3">AUTOTRONICA <sup>JR</sup></div>
+            </a>-->
 
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="index.html">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard</span></a>
+                <?php  echo form_open_multipart('cliente/index'); ?> 
+                <button type="submit" name="buton1" class="btn btn-outline btn-sm ">INICIO</button>
+                <?php echo form_close(); ?>
             </li>
 
             <!-- Divider -->
@@ -25,7 +25,7 @@
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                Interface
+                
             </div>
 
             <!-- Nav Item - Pages Collapse Menu 
@@ -68,7 +68,7 @@
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                Addons
+                REGISTROS
             </div>
 
             <!-- Nav Item - Pages Collapse Menu 
@@ -92,17 +92,23 @@
                 </div>
             </li>-->
 
-            <!-- Nav Item - Charts -->
+            <!-- Nav Item - Charts 
             <li class="nav-item">
                 <a class="nav-link" href="charts.html">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Charts</span></a>
             </li>
+            -->
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
                 <?php  echo form_open_multipart('cliente/index1'); ?> 
                 <button type="submit" name="buton1" class="btn btn-outline btn-sm ">LISTA DE CLIENTES</button>
+                <?php echo form_close(); ?>
+            </li>
+            <li class="nav-item">
+                <?php  echo form_open_multipart('repuesto/index1'); ?> 
+                <button type="submit" name="buton1" class="btn btn-outline btn-sm ">LISTA DE REPUESTOS</button>
                 <?php echo form_close(); ?>
             </li>
 
@@ -114,12 +120,13 @@
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>
             </div>
 
-            <!-- Sidebar Message -->
+            <!-- Sidebar Message icono de la empresa
             <div class="sidebar-card d-none d-lg-flex">
                 <img class="sidebar-card-illustration mb-2" src="<?php echo base_url();?>sbadmin2/img/undraw_rocket.svg" alt="...">
                 <p class="text-center mb-2"><strong>SB Admin Pro</strong> is packed with premium features, components, and more!</p>
                 <a class="btn btn-success btn-sm" href="https://startbootstrap.com/theme/sb-admin-pro">Upgrade to Pro!</a>
             </div>
+            -->
 
         </ul>
         <!-- End of Sidebar -->
@@ -302,7 +309,7 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">USUARIO</span>
                                 <img class="img-profile rounded-circle"
                                     src="<?php echo base_url();?>sbadmin2/img/undraw_profile.svg">
                             </a>
@@ -339,23 +346,22 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+                        <h1 class="h3 mb-0 text-gray-800">JACKSON RACING</h1>
                         <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                                class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+                                class="fas fa-download fa-sm text-white-50"></i> Generar Reporte</a>
                     </div>
 
                     <!-- Content Row -->
                     <div class="row">
 
-                        <!-- Earnings (Monthly) Card Example -->
+                        <!-- Earnings (Monthly) Card Example 
                         <div class="col-xl-3 col-md-6 mb-4">
                             <div class="card border-left-primary shadow h-100 py-2">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                Earnings (Monthly)</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">$40,000</div>
+                                                SERVICIOS</div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -364,6 +370,7 @@
                                 </div>
                             </div>
                         </div>
+                        -->
 
                         <!-- Earnings (Monthly) Card Example -->
                         <div class="col-xl-3 col-md-6 mb-4">
@@ -372,8 +379,7 @@
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                                Earnings (Annual)</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">$215,000</div>
+                                                SERVICIOS</div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
@@ -389,19 +395,7 @@
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Tasks
-                                            </div>
-                                            <div class="row no-gutters align-items-center">
-                                                <div class="col-auto">
-                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50%</div>
-                                                </div>
-                                                <div class="col">
-                                                    <div class="progress progress-sm mr-2">
-                                                        <div class="progress-bar bg-info" role="progressbar"
-                                                            style="width: 50%" aria-valuenow="50" aria-valuemin="0"
-                                                            aria-valuemax="100"></div>
-                                                    </div>
-                                                </div>
+                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">RECEPCIONES
                                             </div>
                                         </div>
                                         <div class="col-auto">
@@ -419,8 +413,8 @@
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                                Pending Requests</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                                                CONTACTOS</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-comments fa-2x text-gray-300"></i>
@@ -435,10 +429,10 @@
 
                     <div class="row">
 
-                        <!-- Area Chart -->
+                        <!-- Area Chart 
                         <div class="col-xl-8 col-lg-7">
                             <div class="card shadow mb-4">
-                                <!-- Card Header - Dropdown -->
+                                <!-- Card Header - Dropdown 
                                 <div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                     <h6 class="m-0 font-weight-bold text-primary">Earnings Overview</h6>
@@ -457,7 +451,9 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- Card Body -->
+                                -->
+
+                                <!-- Card Body 
                                 <div class="card-body">
                                     <div class="chart-area">
                                         <canvas id="myAreaChart"></canvas>
@@ -465,11 +461,12 @@
                                 </div>
                             </div>
                         </div>
-
-                        <!-- Pie Chart -->
+                        -->
+            
+                        <!-- Pie Chart 
                         <div class="col-xl-4 col-lg-5">
                             <div class="card shadow mb-4">
-                                <!-- Card Header - Dropdown -->
+                                <!-- Card Header - Dropdown 
                                 <div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                     <h6 class="m-0 font-weight-bold text-primary">Revenue Sources</h6>
@@ -488,7 +485,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- Card Body -->
+                                -->
+                                <!-- Card Body 
                                 <div class="card-body">
                                     <div class="chart-pie pt-4 pb-2">
                                         <canvas id="myPieChart"></canvas>
@@ -505,17 +503,19 @@
                                         </span>
                                     </div>
                                 </div>
+                                  
                             </div>
                         </div>
+                       
                     </div>
-
+                    -->
                     <!-- Content Row -->
                     <div class="row">
 
                         <!-- Content Column -->
                         <div class="col-lg-6 mb-4">
 
-                            <!-- Project Card Example -->
+                            <!-- Project Card Example 
                             <div class="card shadow mb-4">
                                 <div class="card-header py-3">
                                     <h6 class="m-0 font-weight-bold text-primary">Projects</h6>
@@ -553,80 +553,16 @@
                                     </div>
                                 </div>
                             </div>
-
-                            <!-- Color System -->
-                            <div class="row">
-                                <div class="col-lg-6 mb-4">
-                                    <div class="card bg-primary text-white shadow">
-                                        <div class="card-body">
-                                            Primary
-                                            <div class="text-white-50 small">#4e73df</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 mb-4">
-                                    <div class="card bg-success text-white shadow">
-                                        <div class="card-body">
-                                            Success
-                                            <div class="text-white-50 small">#1cc88a</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 mb-4">
-                                    <div class="card bg-info text-white shadow">
-                                        <div class="card-body">
-                                            Info
-                                            <div class="text-white-50 small">#36b9cc</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 mb-4">
-                                    <div class="card bg-warning text-white shadow">
-                                        <div class="card-body">
-                                            Warning
-                                            <div class="text-white-50 small">#f6c23e</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 mb-4">
-                                    <div class="card bg-danger text-white shadow">
-                                        <div class="card-body">
-                                            Danger
-                                            <div class="text-white-50 small">#e74a3b</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 mb-4">
-                                    <div class="card bg-secondary text-white shadow">
-                                        <div class="card-body">
-                                            Secondary
-                                            <div class="text-white-50 small">#858796</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 mb-4">
-                                    <div class="card bg-light text-black shadow">
-                                        <div class="card-body">
-                                            Light
-                                            <div class="text-black-50 small">#f8f9fc</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 mb-4">
-                                    <div class="card bg-dark text-white shadow">
-                                        <div class="card-body">
-                                            Dark
-                                            <div class="text-white-50 small">#5a5c69</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            
+  
+                            
 
                         </div>
 
                         <div class="col-lg-6 mb-4">
+                          -->
 
-                            <!-- Illustrations -->
+                            <!-- Illustrations 
                             <div class="card shadow mb-4">
                                 <div class="card-header py-3">
                                     <h6 class="m-0 font-weight-bold text-primary">Illustrations</h6>
@@ -644,8 +580,9 @@
                                         unDraw &rarr;</a>
                                 </div>
                             </div>
+                            -->
 
-                            <!-- Approach -->
+                            <!-- Approach 
                             <div class="card shadow mb-4">
                                 <div class="card-header py-3">
                                     <h6 class="m-0 font-weight-bold text-primary">Development Approach</h6>
@@ -658,6 +595,7 @@
                                         Bootstrap framework, especially the utility classes.</p>
                                 </div>
                             </div>
+                            -->
 
                         </div>
                     </div>
@@ -668,12 +606,12 @@
             </div>
             <!-- End of Main Content -->
 
-            <!-- Footer -->
+            <!-- Footer 
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
                         <span>Copyright &copy; Your Website 2021</span>
                     </div>
                 </div>
-            </footer>
+            </footer>-->
             <!-- End of Footer -->

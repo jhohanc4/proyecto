@@ -346,7 +346,7 @@
       <h1>Lista de clientes dehabilitados</h1>
 
     <?php  echo form_open_multipart('cliente/index1'); ?> 
-    <button type="submit" name="buton1" class="btn btn-primary btn-lg ">VER CLIENTES HABILITADOS</button>
+    <button type="submit" name="buton1" class="btn btn-primary btn-lg ">VER PRODUCTOS HABILITADOS</button>
     <?php echo form_close(); ?>
     
     <br>
@@ -355,11 +355,11 @@
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">Nombres</th>
-      <th scope="col">Apellido Paterno</th>
-      <th scope="col">Apellido Materno</th>
-      <th scope="col">Direccion</th>
-      <th scope="col">Telefono</th>
+      <th scope="col">Nombre del Producto</th>
+      <th scope="col">Unidad de medida</th>
+      <th scope="col">Caracteristicas</th>
+      <th scope="col">Marca</th>
+      <th scope="col">stock</th>
       <th scope="col">Habilitar</th>
     </tr>
   </thead>
@@ -371,15 +371,15 @@ foreach ($cliente->result() as $row)
 {?>
     <tr>
       <th scope="row"><?php echo $indice; ?></th>
-      <td><?php echo $row->nombres;?></td>
-      <td><?php echo $row->apellidoPaterno;?></td>
-      <td><?php echo $row->apellidoMaterno;?></td>
-      <td><?php echo $row->direccion;?></td>
-      <td><?php echo $row->telefono;?></td>
+      <td><?php echo $row->nombreProducto;?></td>
+      <td><?php echo $row->unidadMedida;?></td>
+      <td><?php echo $row->cacteristicas;?></td>
+      <td><?php echo $row->marca;?></td>
+      <td><?php echo $row->stock;?></td>
 
       <td>
-        <?php echo form_open_multipart("cliente/habilitarbd") ?>
-        <input type="hidden" name="idcliente" value="<?php echo $row->idcliente; ?>">
+        <?php echo form_open_multipart("repuesto/habilitarbd2") ?>
+        <input type="hidden" name="idproducto" value="<?php echo $row->idproducto; ?>">
         <input type="submit" name="buttonz" value="Habilitar" class="btn btn-warning">
         <?php echo form_close();?>
       </td>
