@@ -8,26 +8,26 @@ class Motorizado extends CI_Controller {
 		$lista=$this->cliente_model->listaclientes();
 		$data['cliente']=$lista;
 
-		$this->load->view('inc/header');
+		$this->load->view('inc/headersbadmin2');
 		$this->load->view('lista',$data);
-		$this->load->view('inc/footer');
+		$this->load->view('inc/footersbadmin2');
 	}
 
 	public function agregar()
 	{
 
-		$this->load->view('inc/header');
+		$this->load->view('inc/headersbadmin2');
 		$this->load->view('formulario');
-		$this->load->view('inc/footer');
+		$this->load->view('inc/footersbadmin2');
 	}
 
 	public function agregarbd()
 	{
-		$data['idcategoria']=$_POST['nombres'];
-		$data['apellidoPaterno']=$_POST['apellidopaterno'];
-		$data['apellidoMaterno']=$_POST['apellidomaterno'];
-		$data['direccion']=$_POST['direccion'];
-		$data['telefono']=$_POST['telefono'];
+		$data['idmotorizado']=$_POST['nombres'];
+		$data['idcategoria']=$_POST['apellidopaterno'];
+		$data['idcliente']=$_POST['apellidomaterno'];
+		$data['placa']=$_POST['direccion'];
+		$data['modelo']=$_POST['telefono'];
 
 		$lista=$this->cliente_model->agregarcliente($data);
 		redirect('cliente/index','refresh');
@@ -45,9 +45,9 @@ class Motorizado extends CI_Controller {
 		$idcliente=$_POST['idcliente'];
 		$data['infocliente']=$this->cliente_model->recuperarcliente($idcliente);
 
-		$this->load->view('inc/header');
+		$this->load->view('inc/headersbadmin2');
 		$this->load->view('formulariomodificar',$data);
-		$this->load->view('inc/footer');
+		$this->load->view('inc/footersbadmin2');
 	}
 
 	public function modificarbd()
@@ -78,9 +78,9 @@ class Motorizado extends CI_Controller {
 		$lista=$this->cliente_model->listaclientesdeshabilitados();
 		$data['cliente']=$lista;
 
-		$this->load->view('inc/header');
+		$this->load->view('inc/headersbadmin2');
 		$this->load->view('listadeshabilitados',$data);
-		$this->load->view('inc/footer');
+		$this->load->view('inc/footersbadmin2');
 	}
 
 	public function habilitarbd()
@@ -100,8 +100,8 @@ class Motorizado extends CI_Controller {
 	}
 	public function registrarmotbd()
 	{
-		$this->load->view('inc/header');
+		$this->load->view('inc/headersbadmin2');
 		$this->load->view('formularioregistrarvehiculo');
-		$this->load->view('inc/footer');
+		$this->load->view('inc/footersbadmin2');
 	}
 }
