@@ -2,9 +2,9 @@
   <div class="row">
     <div class="col-md-12">
 
-      <h2>AGREGAR CLIENTE</h2>
+      <h2>AGREGAR MOTORIZADO</h2>
      <br>
-        <?php  echo form_open_multipart('cliente/agregarbd'); ?>
+        <?php  echo form_open_multipart('motorizado/agregarbd'); ?>
 
   <div class="row mb-3">
   <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">NOMBRES</label>
@@ -43,7 +43,7 @@
 
     
     <br>
-    <button type="submit" class="btn btn-primary">AGREGAR CLIENTE</button>
+    <button type="submit" class="btn btn-primary">AGREGAR MOTORIZADO</button>
 
     <?php form_close(); ?>
 

@@ -5,11 +5,12 @@ class Motorizado extends CI_Controller {
 
 	public function index()
 	{
-		$lista=$this->cliente_model->listaclientes();
-		$data['cliente']=$lista;
+		$lista=$this->motorizado_model->listamotorizados();
+		$data['motorizado']=$lista;
 
 		$this->load->view('inc/headersbadmin2');
-		$this->load->view('lista',$data);
+		$this->load->view('inc/menu');
+		$this->load->view('listapro',$data);
 		$this->load->view('inc/footersbadmin2');
 	}
 
@@ -17,7 +18,8 @@ class Motorizado extends CI_Controller {
 	{
 
 		$this->load->view('inc/headersbadmin2');
-		$this->load->view('formulario');
+		$this->load->view('inc/menu');
+		$this->load->view('formulariomot');
 		$this->load->view('inc/footersbadmin2');
 	}
 

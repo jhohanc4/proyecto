@@ -6,6 +6,7 @@ class Cliente extends CI_Controller {
 	public function index()
 	{
 		$this->load->view('inc/headersbadmin2');
+		$this->load->view('inc/menu');
 		$this->load->view('contenido');
 		$this->load->view('inc/footersbadmin2');
 	}
@@ -15,6 +16,7 @@ class Cliente extends CI_Controller {
 		$data['cliente']=$lista;
 
 		$this->load->view('inc/headersbadmin2');
+		$this->load->view('inc/menu');
 		$this->load->view('lista.php',$data);
 		$this->load->view('inc/footersbadmin2');
 	}
@@ -25,6 +27,7 @@ public function index2()
 		$data['producto']=$lista;
 
 		$this->load->view('inc/headersbadmin2');
+		$this->load->view('inc/menu');
 		$this->load->view('lista2.php',$data);
 		$this->load->view('inc/footersbadmin2');
 	}
@@ -32,6 +35,7 @@ public function index2()
 	{
 
 		$this->load->view('inc/headersbadmin2');
+		$this->load->view('inc/menu');
 		$this->load->view('formulario');
 		$this->load->view('inc/footersbadmin2');
 	}
@@ -61,6 +65,7 @@ public function index2()
 		$data['infocliente']=$this->cliente_model->recuperarcliente($idcliente);
 
 		$this->load->view('inc/headersbadmin2');
+		$this->load->view('inc/menu');
 		$this->load->view('formulariomodificar',$data);
 		$this->load->view('inc/footersbadmin2');
 	}
@@ -94,6 +99,7 @@ public function index2()
 		$data['cliente']=$lista;
 
 		$this->load->view('inc/headersbadmin2');
+		$this->load->view('inc/menu');
 		$this->load->view('listadeshabilitados',$data);
 		$this->load->view('inc/footersbadmin2');
 	}
@@ -111,6 +117,7 @@ public function index2()
 		$idcliente=$_POST['idcliente'];
 
 		$this->load->view('inc/headersbadmin2');
+		$this->load->view('inc/menu');
 		$this->load->view('formularioregistrarvehiculo',$data);
 		$this->load->view('inc/footersbadmin2');
 	}
