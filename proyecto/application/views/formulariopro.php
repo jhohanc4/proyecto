@@ -12,6 +12,12 @@
      <input type="text" name="nombreproducto" class="form-control" autocomplete="off" placeholder="Ingrese el nombre del producto" required>
   </div>
   </div>
+  <div class="row mb-3">
+  <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">CANTIDAD DEL PRODUCTO</label>
+  <div class="col-sm-10">
+     <input type="text" name="cantidad" class="form-control" autocomplete="off" placeholder="Ingrese la cantidad del producto" required>
+  </div>
+  </div>
 
   <div class="row mb-3">
   <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">UNIDAD DE MEDIDA</label>
@@ -31,13 +37,6 @@
   <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">MARCA</label>
   <div class="col-sm-10">
      <input type="text" name="marca" class="form-control" autocomplete="off" placeholder="Ingrese la marca del producto"required>
-  </div>  
-  </div> 
-
-  <div class="row mb-3">
-  <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">STOCK</label>
-  <div class="col-sm-10">
-     <input type="text"  name="stock" class="form-control" autocomplete="off" placeholder="Ingrese el stock de almacen" required>
   </div>  
   </div> 
 

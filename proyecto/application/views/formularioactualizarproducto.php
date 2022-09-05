@@ -9,7 +9,7 @@
       <?php 
       foreach ($infoproducto->result() as $row) 
       {
-        echo form_open_multipart('producto/modificarbd'); 
+        echo form_open_multipart('producto/actualizarbd'); 
         ?> 
         
         
@@ -23,6 +23,13 @@
               </div>
 
               <div class="row mb-3">
+              <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Cantidad</label>
+              <div class="col-sm-10">
+                 <input type="text" name="cantidad" class="form-control"placeholder="cantidad" value="<?php echo $row->cantidad;?>" required>
+              </div>
+              </div>
+
+              <div class="row mb-3">
               <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Unidad de Medida</label>
               <div class="col-sm-10">
                  <input type="text" name="unidadmedida"class="form-control" placeholder="unidad de medida" value="<?php echo $row->unidadMedida;?>" required>
@@ -32,7 +39,7 @@
               <div class="row mb-3">
               <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Caracteristicas</label>
               <div class="col-sm-10">
-                 <input type="text" name="caracteristicas"class="form-control" placeholder="Ingrese caracteristicas del producto" value="<?php echo $row->caracteristicas;?>" >
+                 <input type="text" name="caracteristicas"class="form-control" placeholder="Ingrese caracteristicas del producto" value="<?php echo $row->caracteristicas;?>" required>
               </div>
               </div>
               
@@ -46,7 +53,7 @@
               <div class="row mb-3">
               <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Stock</label>
               <div class="col-sm-10">
-                 <input type="text" name="stock" class="form-control"placeholder="Ingrese el estock" value="<?php echo $row->stock;?>"  disabled> 
+                 <input type="text" name="stock" class="form-control"placeholder="Ingrese el estock" value="<?php echo $row->stock;?>"  required> 
               </div>
               </div>
 

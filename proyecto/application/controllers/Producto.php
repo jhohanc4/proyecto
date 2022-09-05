@@ -26,6 +26,7 @@ class Producto extends CI_Controller {
 	public function agregarbd()
 	{
 		$data['nombreProducto']=$_POST['nombreproducto'];
+		$data['cantidad']=$_POST['cantidad'];
 		$data['unidadMedida']=$_POST['unidadmedida'];
 		$data['caracteristicas']=$_POST['caracteristicas'];
 		$data['marca']=$_POST['marca'];
@@ -53,11 +54,22 @@ class Producto extends CI_Controller {
 		$this->load->view('inc/footersbadmin2');
 	}
 
+	public function actualizar()
+	{
+		$idproducto=$_POST['idproducto'];
+		$data['infoproducto']=$this->producto_model->recuperarproducto($idproducto);
+
+		$this->load->view('inc/headersbadmin2');
+		$this->load->view('inc/menu');
+		$this->load->view('formularioactualizarproducto',$data);
+		$this->load->view('inc/footersbadmin2');
+	}
 	public function modificarbd()
 	{
 		$idproducto=$_POST['idproducto'];
 
 		$data['nombreProducto']=$_POST['nombreproducto'];
+		$data['cantidad']=$_POST['cantidad'];
 		$data['unidadMedida']=$_POST['unidadmedida'];
 		$data['caracteristicas']=$_POST['caracteristicas'];
 		$data['marca']=$_POST['marca'];

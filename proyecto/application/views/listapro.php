@@ -23,12 +23,13 @@
     <tr>
       <th scope="col">#</th>
       <th scope="col">Nombre Producto</th>
-      <th scope="col">Unidad Medida</th>
       <th scope="col">Caracteristicas</th>
       <th scope="col">Marca</th>
       <th scope="col">Stock</th>
+      <th scope="col">Unidad Medida</th>
       <th scope="col">Modificar Producto</th>
       <th scope="col">deshabilitar Producto</th>
+      <th scope="col">actualizar stock</th>
     </tr>
   </thead>
   <tbody>
@@ -40,11 +41,10 @@ foreach ($producto->result() as $row)
     <tr>
       <th scope="row"><?php echo $indice; ?></th>
       <td><?php echo $row->nombreProducto;?></td>
-      <td><?php echo $row->unidadMedida;?></td>
       <td><?php echo $row->caracteristicas;?></td>
       <td><?php echo $row->marca;?></td>
       <td><?php echo $row->stock;?></td>
-
+      <td><?php echo $row->unidadMedida;?></td>
       <td>
         <?php echo form_open_multipart("producto/modificar") ?>
         <input type="hidden" name="idproducto" value="<?php echo $row->idproducto; ?>">
@@ -59,6 +59,12 @@ foreach ($producto->result() as $row)
         <?php echo form_close();?>
       </td>
 
+      <td>
+        <?php echo form_open_multipart("producto/actualizar") ?>
+        <input type="hidden" name="idproducto" value="<?php echo $row->idproducto; ?>">
+        <input type="submit" name="buttonz" value="actualizar" class="btn btn-warning">
+        <?php echo form_close();?>
+      </td>
     </tr>
   <?php
   $indice++;
