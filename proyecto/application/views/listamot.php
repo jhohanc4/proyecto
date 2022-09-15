@@ -29,6 +29,8 @@
       <th scope="col">Modelo</th>
       <th scope="col">Color</th>
       <th scope="col">Codigo de chasis</th>
+      <th scope="col">Modificar</th>
+      <th scope="col">Deshabilitar</th>
     </tr>
   </thead>
   <tbody>
@@ -39,8 +41,8 @@ foreach ($motorizado->result() as $row)
 {?>
     <tr>
       <th scope="row"><?php echo $indice; ?></th>
-      <td><?php echo $row->idcategoria;?></td>
-      <td><?php echo $row->idCliente;?></td>
+      <td><?php echo $row->nombreCategoria;?></td>
+      <td><?php echo $row->nombres;?> &nbsp; <?php echo $row->apellidoPaterno;?> &nbsp; <?php echo $row->apellidoMaterno;?></td>
       <td><?php echo $row->placa;?></td>
       <td><?php echo $row->marca;?></td>
       <td><?php echo $row->modelo;?></td>
@@ -58,8 +60,8 @@ foreach ($motorizado->result() as $row)
 
 
       <td>
-        <?php echo form_open_multipart("cliente/deshabilitarbd") ?>
-        <input type="hidden" name="idcliente" value="<?php echo $row->idcliente; ?>">
+        <?php echo form_open_multipart("motorizado/deshabilitarbd") ?>
+        <input type="hidden" name="idmotorizado" value="<?php echo $row->idmotorizado; ?>">
         <input type="submit" name="buttonz" value="Deshabilitar" class="btn btn-danger">
         <?php echo form_close();?>
       </td>

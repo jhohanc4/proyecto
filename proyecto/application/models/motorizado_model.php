@@ -5,10 +5,11 @@ class Motorizado_model extends CI_Model {
 
 	public function listamotorizados()
 	{
-		$this->db->select('m.idmotorizado,ct.idcategoria,c.idcliente,m.placa,m.marca,m.modelo,m.color,m.codigoChasis');//select
+		$this->db->select('m.idmotorizado,c.nombreCategoria,cl.nombres,cl.apellidoPaterno,cl.apellidoMaterno,m.placa,m.marca,m.modelo,m.color,m.codigoChasis');//select
 		$this->db->from('motorizado m');//tabla
-		$this->db->join('cliente c', 'idcliente = idmotorizado');
-		$this->db->join('categoria ct', 'idcategoria = idmotorizado');
+		$this->db->join('categoria c', 'c.idcategoria = m.idcategoria');
+		$this->db->join('cliente cl', 'cl.idcliente = m.idcliente');
+		$this->db->where('m.estado','1');
 		return $this->db->get();//devolucion del resultado de la consulta
 	}
 
@@ -17,24 +18,24 @@ class Motorizado_model extends CI_Model {
 		$this->db->insert('motorizado',$data);//insert
 	}
 
-	public function eliminartorizado($idcliente)
+	public function eliminartorizado($idmotorizado)
 	{
 		$this->db->where('idmotorizado',$idcliente);//eliminar de bd
 		$this->db->delete('motorizado');
 	}
-	public function recuperartorizado($idcliente)
+	public function recuperarmotorizado($idmotorizado)
 	{
 		$this->db->select('*');//select
 		$this->db->from('motorizado');//tabla
-		$this->db->where('idmotorizado',$idcliente);//eliminar de bd(bdd,formulario)
+		$this->db->where('idmotorizado',$idmotorizado);//eliminar de bd(bdd,formulario)
 		return $this->db->get();//devolucion del resultado de la consulta
 	}
-	public function modificartorizado($idcliente,$data)
+	public function modificarmotorizado($idmotorizado,$data)
 	{
-		$this->db->where('idmotorizado',$idcliente);//(bdd,formulario)
+		$this->db->where('idmotorizado',$idmotorizado);//(bdd,formulario)
 		$this->db->update('motorizado',$data);//update
 	}
-	public function listatorizadosdeshabilitados()
+	public function listamotorizadosdeshabilitados()
 	{
 		$this->db->select('*');//select
 		$this->db->from('motorizado');//tabla

@@ -55,6 +55,12 @@
                 <?php echo form_close(); ?>
             </li>
 
+            <li class="nav-item">
+                <?php  echo form_open_multipart('usuario/index'); ?> 
+                <button type="submit" name="buton1" class="btn btn-outline btn-sm ">LISTA DE USUARIOS</button>
+                <?php echo form_close(); ?>
+            </li>
+
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 

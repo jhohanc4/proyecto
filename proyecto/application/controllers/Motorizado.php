@@ -10,7 +10,7 @@ class Motorizado extends CI_Controller {
 
 		$this->load->view('inc/headersbadmin2');
 		$this->load->view('inc/menu');
-		$this->load->view('listapro',$data);
+		$this->load->view('listamot',$data);
 		$this->load->view('inc/footersbadmin2');
 	}
 
@@ -44,54 +44,57 @@ class Motorizado extends CI_Controller {
 
 	public function modificar()
 	{
-		$idcliente=$_POST['idcliente'];
-		$data['infocliente']=$this->cliente_model->recuperarcliente($idcliente);
+		$idmotorizado=$_POST['idmotorizado'];
+		$data['infomotorizado']=$this->motorizado_model->recuperarmotorizado($idmotorizado);
 
 		$this->load->view('inc/headersbadmin2');
-		$this->load->view('formulariomodificar',$data);
+		$this->load->view('inc/menu');
+		$this->load->view('formulariomodificarmotorizado',$data);
 		$this->load->view('inc/footersbadmin2');
 	}
 
 	public function modificarbd()
 	{
-		$idcliente=$_POST['idcliente'];
+		$idmotorizado=$_POST['idmotorizado'];
 
-		$data['nombres']=$_POST['nombres'];
-		$data['apellidoPaterno']=$_POST['apellidopaterno'];
-		$data['apellidoMaterno']=$_POST['apellidomaterno'];
-		$data['direccion']=$_POST['direccion'];
-		$data['telefono']=$_POST['telefono'];
+		$data['idcategoria']=$_POST['categoria'];
+		$data['idcliente']=$_POST['cliente'];
+		$data['placa']=$_POST['placa'];
+		$data['modelo']=$_POST['modelo'];
+		$data['color']=$_POST['color'];
+		$data['codigoChasis']=$_POST['numeroChasis'];
 
-		$this->cliente_model->modificarcliente($idcliente,$data);
-		redirect('cliente/index','refresh');
+		$this->motorizado_model->modificarmotorizado($idmotorizado,$data);
+		redirect('motorizado/index','refresh');
 	}
 
 	public function deshabilitarbd()
 	{
-		$idcliente=$_POST['idcliente'];
+		$idmotorizado=$_POST['idmotorizado'];
 		$data['estado']='0';
 
-		$this->cliente_model->modificarcliente($idcliente,$data);
-		redirect('cliente/index','refresh');
+		$this->motorizado_model->modificarmotorizado($idmotorizado,$data);
+		redirect('motorizado/index','refresh');
 	}
 
 	public function deshabilitados()
 	{
-		$lista=$this->cliente_model->listaclientesdeshabilitados();
-		$data['cliente']=$lista;
+		$lista=$this->motorizado_model->listamotorizadosdeshabilitados();
+		$data['motorizado']=$lista;
 
 		$this->load->view('inc/headersbadmin2');
-		$this->load->view('listadeshabilitados',$data);
+		$this->load->view('inc/menu');
+		$this->load->view('listadeshabilitadosmot',$data);
 		$this->load->view('inc/footersbadmin2');
 	}
 
 	public function habilitarbd()
 	{
-		$idcliente=$_POST['idcliente'];
+		$idmotorizado=$_POST['idmotorizado'];
 		$data['estado']='1';
 
-		$this->cliente_model->modificarcliente($idcliente,$data);
-		redirect('cliente/deshabilitados','refresh');
+		$this->motorizado_model->modificarmotorizado($idmotorizado,$data);
+		redirect('motorizado/deshabilitados','refresh');
 	}
 
 	public function prueba()
