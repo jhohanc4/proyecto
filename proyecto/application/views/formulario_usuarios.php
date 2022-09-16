@@ -44,7 +44,7 @@
      <input type="password" name="contrasenia" class="form-control" autocomplete="off" placeholder="Ingrese la contraseña" required>
   </div>  
   </div> 
-    
+  
     <br>
     <button type="submit" class="btn btn-primary">AGREGAR USUARIO</button>
 

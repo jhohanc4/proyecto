@@ -25,12 +25,14 @@ class Usuario extends CI_Controller {
 
 	public function agregarbd()
 	{
-		$pswd=$_POST['contrasenia'];
 		$data['idcargo']=$_POST['cargo'];
 		$data['nombres']=$_POST['nombres'];
 		$data['apellidoPaterno']=$_POST['apellidopaterno'];
 		$data['apellidoMaterno']=$_POST['apellidomaterno'];
-		$data['contrasenia']=md5();
+		$data['contrasenia']=md5($_POST['contrasenia'].$_POST['nombres']);
+
+
+		$data['login']=substr(str_shuffle($_POST['nombres'].$_POST['apellidopaterno'].$_POST['apellidomaterno']), 0, 8);
 
 		$lista=$this->usuario_model->agregarusuario($data);
 		redirect('usuario/index','refresh');
@@ -69,39 +71,30 @@ class Usuario extends CI_Controller {
 
 	public function deshabilitarbd()
 	{
-		$idcliente=$_POST['idusuario'];
+		$idusuario=$_POST['idusuario'];
 		$data['estado']='0';
 
-		$this->cliente_model->modificarcliente($idcliente,$data);
+		$this->usuario_model->modificarusuario($idusuario,$data);
 		redirect('usuario/index','refresh');
 	}
 
 	public function deshabilitados()
 	{
-		$lista=$this->usuario_model->listaclientesdeshabilitados();
-		$data['cliente']=$lista;
+		$lista=$this->usuario_model->listausuariosdeshabilitados();
+		$data['usuario']=$lista;
 
 		$this->load->view('inc/headersbadmin2');
 		$this->load->view('inc/menu');
-		$this->load->view('listadeshabilitados',$data);
+		$this->load->view('lista_deshabilitados_usuarios',$data);
 		$this->load->view('inc/footersbadmin2');
 	}
 
 	public function habilitarbd()
 	{
-		$idcliente=$_POST['idusuario'];
+		$idusuario=$_POST['idusuario'];
 		$data['estado']='1';
 
-		$this->cliente_model->modificarcliente($idcliente,$data);
+		$this->usuario_model->modificarusuario($idusuario,$data);
 		redirect('usuario/deshabilitados','refresh');
-	}
-	public function registrarmotorizado()
-	{
-		$idcliente=$_POST['idusuario'];
-
-		$this->load->view('inc/headersbadmin2');
-		$this->load->view('inc/menu');
-		$this->load->view('formularioregistrarvehiculo',$data);
-		$this->load->view('inc/footersbadmin2');
 	}
 }

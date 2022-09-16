@@ -5,7 +5,7 @@ class Usuario_model extends CI_Model {
 
 	public function listausuarios()
 	{
-		$this->db->select('u.idusuario,c.descripcionCargo,u.nombres,u.apellidoPaterno,u.apellidoMaterno,u.contrasenia');//select
+		$this->db->select('u.idusuario,c.descripcionCargo,u.nombres,u.apellidoPaterno,u.apellidoMaterno,u.contrasenia,u.login');//select
 		$this->db->from('usuario u');//tabla
 		$this->db->join('cargo c', 'c.idcargo = u.idcargo');
 		$this->db->where('u.estado','1');
@@ -34,11 +34,19 @@ class Usuario_model extends CI_Model {
 		$this->db->where('idusuario',$idusuario);//(bdd,formulario)
 		$this->db->update('usuario',$data);//update
 	}
-	public function listaclientesdeshabilitados()
+	public function listausuariosdeshabilitados()
 	{
 		$this->db->select('*');//select
-		$this->db->from('cliente');//tabla
+		$this->db->from('usuario');//tabla
 		$this->db->where('estado','0');
 		return $this->db->get();//devolucion del resultado de la consulta
+	}
+	 public function validar($login,$contrasenia)
+	{
+		$this->db->select('*');
+		$this->db->from('usuario');
+		$this->db->where('login',$login);
+		$this->db->where('contrasenia',$contrasenia);
+		return $this->db->get();
 	}
 }

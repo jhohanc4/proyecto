@@ -27,6 +27,7 @@
       <th scope="col">Primer Apellido</th>
       <th scope="col">Segundo Apellido</th>
       <th scope="col">Contraseña</th>
+      <th scope="col">Login</th>
       <th scope="col">Modificar</th>
       <th scope="col">Deshabilitar</th>
     </tr>
@@ -44,6 +45,7 @@ foreach ($usuario->result() as $row)
       <td><?php echo $row->apellidoPaterno;?></td>
       <td><?php echo $row->apellidoMaterno;?></td>
       <td><?php echo $row->contrasenia;?></td>
+      <td><?php echo $row->login;?></td>
 
       <td>
         <?php echo form_open_multipart("usuario/modificar") ?>
