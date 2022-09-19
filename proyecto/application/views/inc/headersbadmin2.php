@@ -26,6 +26,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>bootstrap/css/checkout.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>bootstrap/css/form-validation.css">
+    
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="<?php echo base_url();?>bootstrap/plugins/fontawesome-free/css/all.min.css">
+    <!-- icheck bootstrap -->
+    <link rel="stylesheet" href="<?php echo base_url();?>bootstrap/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="<?php echo base_url();?>bootstrap/css/adminlte.min.css">
 
 </head>
 

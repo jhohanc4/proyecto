@@ -29,8 +29,7 @@
             </div>
 
 
-            <!-- Divider -->
-            <hr class="sidebar-divider">
+            
 
             <!-- Heading -->
             <div class="sidebar-heading">
@@ -63,6 +62,15 @@
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
+
+            <li class="nav-item">
+                <?php  echo form_open_multipart('usuario/logout'); ?> 
+                <button type="submit" name="butonex" class="btn btn-outline btn-sm ">CERRAR SESSION</button>
+                <?php echo form_close(); ?>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
 
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">
@@ -252,7 +260,7 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">USUARIO</span>
+                                <h1><?php  echo $this->session->userdata('idusuario');?></h1>
                                 <img class="img-profile rounded-circle"
                                     src="<?php echo base_url();?>sbadmin2/img/undraw_profile.svg">
                             </a>

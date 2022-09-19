@@ -3,10 +3,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Usuario extends CI_Controller {
 
+
 	public function index()
 	{
 		$lista=$this->usuario_model->listausuarios();
-		$data['usuario']=$lista;
+		$data['usuario']=$lista; 
 
 		$this->load->view('inc/headersbadmin2');
 		$this->load->view('inc/menu');
@@ -14,14 +15,73 @@ class Usuario extends CI_Controller {
 		$this->load->view('inc/footersbadmin2');
 	}
 
-	public function agregar()
+	public function inicio()
 	{
+		if ($this->session->userdata('login')) 
+		{
+			$this->load->view('inc/headersbadmin2');
+			$this->load->view('inc/menu');
+			$this->load->view('contenido');
+			$this->load->view('inc/footersbadmin2');
+		}
 
+		else
+		{
+			$this->load->view('inc/headersbadmin2');
+			$this->load->view('login');
+			$this->load->view('inc/footersbadmin2');
+			 
+		}
+	}
+	public function menu()
+	{
 		$this->load->view('inc/headersbadmin2');
 		$this->load->view('inc/menu');
-		$this->load->view('formulario_usuarios');
+		$this->load->view('contenido');
 		$this->load->view('inc/footersbadmin2');
 	}
+
+	public function validar()
+	{
+		//agregar el metodo md5 en paswword pero arreglar la parte de llave que es adjuntado con nombres
+		$login=$_POST['login'];
+		$contrasenia=$_POST['password'];
+
+		$consulta =$this->usuario_model->validar($login,$contrasenia);
+
+		if ($consulta->num_rows()>0) 
+		{
+			foreach ($consulta->result() as $row) 
+			{
+				$this->session->set_userdata('idusuario',$row->login);
+				$this->session->set_userdata('login',$row->contrasenia);
+				$this->session->set_userdata('cargo',$row->descripcionCargo);
+
+				redirect('usuario/menu','refresh');
+			}
+		}
+		else
+		{
+			redirect('usuario/inicio','refresh');
+		}
+	}
+
+	public function panel()
+	{
+		if ($this->session->userdata('login')) 
+		{
+			foreach ($consulta->result() as $row) 
+			{
+				redirect('usuario/menu','refresh');
+			}
+		}
+		else
+		{
+			redirect('usuario/inicio','refresh');
+		}
+	}
+		
+
 
 	public function agregarbd()
 	{
@@ -96,5 +156,10 @@ class Usuario extends CI_Controller {
 
 		$this->usuario_model->modificarusuario($idusuario,$data);
 		redirect('usuario/deshabilitados','refresh');
+	}
+	public function logout()
+	{
+		$this->session->sess_destroy();
+		redirect('usuario/inicio','refresh');
 	}
 }

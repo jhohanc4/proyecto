@@ -46,7 +46,7 @@ class Usuario_model extends CI_Model {
 		$this->db->select('*');
 		$this->db->from('usuario');
 		$this->db->where('login',$login);
-		$this->db->where('contrasenia',$contrasenia);
+		$this->db->where('contrasenia',($contrasenia));
 		return $this->db->get();
 	}
 }
