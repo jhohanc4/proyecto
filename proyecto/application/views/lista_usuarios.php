@@ -40,7 +40,7 @@ foreach ($usuario->result() as $row)
 {?>
     <tr>
       <th scope="row"><?php echo $indice; ?></th>
-      <td><?php echo $row->descripcionCargo;?></td>
+      <td><?php echo $row->cargo;?></td>
       <td><?php echo $row->nombres;?></td>
       <td><?php echo $row->apellidoPaterno;?></td>
       <td><?php echo $row->apellidoMaterno;?></td>

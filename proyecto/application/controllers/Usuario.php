@@ -82,7 +82,14 @@ class Usuario extends CI_Controller {
 	}
 		
 
+public function agregar()
+	{
 
+		$this->load->view('inc/headersbadmin2');
+		$this->load->view('inc/menu');
+		$this->load->view('formulario_usuarios');
+		$this->load->view('inc/footersbadmin2');
+	}
 	public function agregarbd()
 	{
 		$data['idcargo']=$_POST['cargo'];
@@ -91,7 +98,7 @@ class Usuario extends CI_Controller {
 		$data['apellidoMaterno']=$_POST['apellidomaterno'];
 		$data['contrasenia']=md5($_POST['contrasenia'].$_POST['nombres']);
 
-
+///generacion de login de usuario de forma aleatoria de la adjuncion de nombres y apellidos con 8 caracteres
 		$data['login']=substr(str_shuffle($_POST['nombres'].$_POST['apellidopaterno'].$_POST['apellidomaterno']), 0, 8);
 
 		$lista=$this->usuario_model->agregarusuario($data);

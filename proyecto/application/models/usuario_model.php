@@ -5,9 +5,8 @@ class Usuario_model extends CI_Model {
 
 	public function listausuarios()
 	{
-		$this->db->select('u.idusuario,c.descripcionCargo,u.nombres,u.apellidoPaterno,u.apellidoMaterno,u.contrasenia,u.login');//select
+		$this->db->select('u.idusuario,u.cargo,u.nombres,u.apellidoPaterno,u.apellidoMaterno,u.contrasenia,u.login');//select
 		$this->db->from('usuario u');//tabla
-		$this->db->join('cargo c', 'c.idcargo = u.idcargo');
 		$this->db->where('u.estado','1');
 		return $this->db->get();//devolucion del resultado de la consulta
 	}
