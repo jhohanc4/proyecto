@@ -48,6 +48,39 @@
     <script src="<?php echo base_url();?>sbadmin2/js/demo/chart-area-demo.js"></script>
     <script src="<?php echo base_url();?>sbadmin2/  js/demo/chart-pie-demo.js"></script>
 
+
+<script src="<?php echo base_url();?>bootstrap/template/jquery/jquery.min.js"></script>
+<!-- Highcharts -->
+<script src="<?php echo base_url();?>bootstrap/template/highcharts/highcharts.js"></script>
+<script src="<?php echo base_url();?>bootstrap/template/highcharts/exporting.js"></script>
+<script src="<?php echo base_url();?>bootstrap/template/jquery-print/jquery.print.js"></script>
+<!-- Bootstrap 3.3.7 -->
+<script src="<?php echo base_url();?>bootstrap/template/bootstrap/js/bootstrap.min.js"></script>
+<script src="<?php echo base_url();?>bootstrap/template/jquery-ui/jquery-ui.js"></script>
+<!-- SlimScroll -->
+<script src="<?php echo base_url();?>bootstrap/template/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<!-- DataTables -->
+<script src="<?php echo base_url();?>bootstrap/template/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="<?php echo base_url();?>bootstrap/template/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<!-- DataTables Export -->
+<script src="<?php echo base_url();?>bootstrap/template/datatables-export/js/dataTables.buttons.min.js"></script>
+<script src="<?php echo base_url();?>bootstrap/template/datatables-export/js/buttons.flash.min.js"></script>
+<script src="<?php echo base_url();?>bootstrap/template/datatables-export/js/jszip.min.js"></script>
+<script src="<?php echo base_url();?>bootstrap/template/datatables-export/js/pdfmake.min.js"></script>
+<script src="<?php echo base_url();?>bootstrap/template/datatables-export/js/vfs_fonts.js"></script>
+<script src="<?php echo base_url();?>bootstrap/template/datatables-export/js/buttons.html5.min.js"></script>
+<script src="<?php echo base_url();?>bootstrap/template/datatables-export/js/buttons.print.min.js"></script>
+<!-- FastClick -->
+<script src="<?php echo base_url();?>bootstrap/template/fastclick/lib/fastclick.js"></script>
+<!-- AdminLTE App -->
+<script src="<?php echo base_url();?>bootstrap/template/dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="<?php echo base_url();?>bootstrap/template/dist/js/demo.js"></script>
+<script>
+   var base_url= "<?php echo base_url();?>";
+</script>
+<script src="<?php echo base_url();?>assets/template/backend/script.js"></script>
+    
 </body>
 
 </html>

@@ -10,7 +10,7 @@ class Producto extends CI_Controller {
 
 		$this->load->view('inc/headersbadmin2');
 		$this->load->view('inc/menu');
-		$this->load->view('listapro',$data);
+		$this->load->view('lista/listapro',$data);
 		$this->load->view('inc/footersbadmin2');
 	}
 
@@ -19,7 +19,7 @@ class Producto extends CI_Controller {
 
 		$this->load->view('inc/headersbadmin2');
 		$this->load->view('inc/menu');
-		$this->load->view('formulariopro');
+		$this->load->view('formulario/formulariopro');
 		$this->load->view('inc/footersbadmin2');
 	}
 
@@ -30,7 +30,6 @@ class Producto extends CI_Controller {
 		$data['unidadMedida']=$_POST['unidadmedida'];
 		$data['caracteristicas']=$_POST['caracteristicas'];
 		$data['marca']=$_POST['marca'];
-		$data['stock']=$_POST['stock'];
 
 		$lista=$this->producto_model->agregarproducto($data);
 		redirect('producto/index','refresh');
@@ -50,7 +49,7 @@ class Producto extends CI_Controller {
 
 		$this->load->view('inc/headersbadmin2');
 		$this->load->view('inc/menu');
-		$this->load->view('formulariomodificarproducto',$data);
+		$this->load->view('modificar/formulariomodificarproducto',$data);
 		$this->load->view('inc/footersbadmin2');
 	}
 
@@ -61,7 +60,7 @@ class Producto extends CI_Controller {
 
 		$this->load->view('inc/headersbadmin2');
 		$this->load->view('inc/menu');
-		$this->load->view('formularioactualizarproducto',$data);
+		$this->load->view('formulario/formularioactualizarproducto',$data);
 		$this->load->view('inc/footersbadmin2');
 	}
 	public function modificarbd()
@@ -69,12 +68,11 @@ class Producto extends CI_Controller {
 		$idproducto=$_POST['idproducto'];
 
 		$data['nombreProducto']=$_POST['nombreproducto'];
-		$data['cantidad']=$_POST['cantidad'];
 		$data['unidadMedida']=$_POST['unidadmedida'];
 		$data['caracteristicas']=$_POST['caracteristicas'];
 		$data['marca']=$_POST['marca'];
 		$data['unidadMedida']=$_POST['unidadmedida'];
-		$data['stock']=$_POST['stock'];
+		$data['cantidad']=$_POST['cantidad'];
 
 		$this->producto_model->modificarproducto($idproducto,$data);
 		redirect('producto/index','refresh');
@@ -96,7 +94,7 @@ class Producto extends CI_Controller {
 
 		$this->load->view('inc/headersbadmin2');
 		$this->load->view('inc/menu');
-		$this->load->view('listadeshabilitadospro',$data);
+		$this->load->view('lista/listadeshabilitadospro',$data);
 		$this->load->view('inc/footersbadmin2');
 	}
 

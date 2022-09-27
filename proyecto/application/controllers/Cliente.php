@@ -17,26 +17,16 @@ class Cliente extends CI_Controller {
 
 		$this->load->view('inc/headersbadmin2');
 		$this->load->view('inc/menu');
-		$this->load->view('lista.php',$data);
+		$this->load->view('lista/lista.php',$data);
 		$this->load->view('inc/footersbadmin2');
 	}
 
-public function index2()
-	{
-		$lista=$this->repuesto_model->listarepuesto();
-		$data['producto']=$lista;
-
-		$this->load->view('inc/headersbadmin2');
-		$this->load->view('inc/menu');
-		$this->load->view('lista2.php',$data);
-		$this->load->view('inc/footersbadmin2');
-	}
 	public function agregar()
 	{
 
 		$this->load->view('inc/headersbadmin2');
 		$this->load->view('inc/menu');
-		$this->load->view('formulario');
+		$this->load->view('formulario/formulario');
 		$this->load->view('inc/footersbadmin2');
 	}
 
@@ -66,7 +56,7 @@ public function index2()
 
 		$this->load->view('inc/headersbadmin2');
 		$this->load->view('inc/menu');
-		$this->load->view('formulariomodificar',$data);
+		$this->load->view('formulario/formulariomodificar',$data);
 		$this->load->view('inc/footersbadmin2');
 	}
 
@@ -100,7 +90,7 @@ public function index2()
 
 		$this->load->view('inc/headersbadmin2');
 		$this->load->view('inc/menu');
-		$this->load->view('listadeshabilitados',$data);
+		$this->load->view('lista/listadeshabilitados',$data);
 		$this->load->view('inc/footersbadmin2');
 	}
 
@@ -118,7 +108,7 @@ public function index2()
 
 		$this->load->view('inc/headersbadmin2');
 		$this->load->view('inc/menu');
-		$this->load->view('formularioregistrarvehiculo',$data);
+		$this->load->view('formulario/formularioregistrarvehiculo',$data);
 		$this->load->view('inc/footersbadmin2');
 	}
 }

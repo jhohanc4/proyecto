@@ -11,7 +11,7 @@ class Usuario extends CI_Controller {
 
 		$this->load->view('inc/headersbadmin2');
 		$this->load->view('inc/menu');
-		$this->load->view('lista_usuarios',$data);
+		$this->load->view('lista/lista_usuarios',$data);
 		$this->load->view('inc/footersbadmin2');
 	}
 
@@ -45,7 +45,7 @@ class Usuario extends CI_Controller {
 	{
 		//agregar el metodo md5 en paswword pero arreglar la parte de llave que es adjuntado con nombres
 		$login=$_POST['login'];
-		$contrasenia=$_POST['password'];
+		$contrasenia=md5($_POST['password']);
 
 		$consulta =$this->usuario_model->validar($login,$contrasenia);
 
@@ -55,7 +55,7 @@ class Usuario extends CI_Controller {
 			{
 				$this->session->set_userdata('idusuario',$row->login);
 				$this->session->set_userdata('login',$row->contrasenia);
-				$this->session->set_userdata('cargo',$row->descripcionCargo);
+				$this->session->set_userdata('cargo',$row->cargo);
 
 				redirect('usuario/menu','refresh');
 			}
@@ -87,19 +87,19 @@ public function agregar()
 
 		$this->load->view('inc/headersbadmin2');
 		$this->load->view('inc/menu');
-		$this->load->view('formulario_usuarios');
+		$this->load->view('formulario/formulario_usuarios');
 		$this->load->view('inc/footersbadmin2');
 	}
 	public function agregarbd()
 	{
-		$data['idcargo']=$_POST['cargo'];
+		$data['cargo']=$_POST['cargo'];
 		$data['nombres']=$_POST['nombres'];
 		$data['apellidoPaterno']=$_POST['apellidopaterno'];
 		$data['apellidoMaterno']=$_POST['apellidomaterno'];
-		$data['contrasenia']=md5($_POST['contrasenia'].$_POST['nombres']);
+		$data['contrasenia']=md5($_POST['contrasenia']);
 
-///generacion de login de usuario de forma aleatoria de la adjuncion de nombres y apellidos con 8 caracteres
-		$data['login']=substr(str_shuffle($_POST['nombres'].$_POST['apellidopaterno'].$_POST['apellidomaterno']), 0, 8);
+///generacion de login de usuario de forma aleatoria de la adjuncion de nombres y apellidos con 5 caracteres
+		$data['login']=substr(str_shuffle($_POST['nombres'].$_POST['apellidopaterno'].$_POST['apellidomaterno']), 0, 5);
 
 		$lista=$this->usuario_model->agregarusuario($data);
 		redirect('usuario/index','refresh');
@@ -119,7 +119,7 @@ public function agregar()
 
 		$this->load->view('inc/headersbadmin2');
 		$this->load->view('inc/menu');
-		$this->load->view('formulario_modificar_usuarios',$data);
+		$this->load->view('modificar/formulario_modificar_usuarios',$data);
 		$this->load->view('inc/footersbadmin2');
 	}
 
@@ -127,7 +127,7 @@ public function agregar()
 	{
 		$idusuario=$_POST['idusuario'];
 
-		$data['idcargo']=$_POST['cargo'];
+		$data['cargo']=$_POST['cargo'];
 		$data['nombres']=$_POST['nombres'];
 		$data['apellidoPaterno']=$_POST['apellidopaterno'];
 		$data['apellidoMaterno']=$_POST['apellidomaterno'];
@@ -152,7 +152,7 @@ public function agregar()
 
 		$this->load->view('inc/headersbadmin2');
 		$this->load->view('inc/menu');
-		$this->load->view('lista_deshabilitados_usuarios',$data);
+		$this->load->view('lista/lista_deshabilitados_usuarios',$data);
 		$this->load->view('inc/footersbadmin2');
 	}
 

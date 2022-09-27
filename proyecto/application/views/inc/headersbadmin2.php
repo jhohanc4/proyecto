@@ -34,7 +34,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <link rel="stylesheet" href="<?php echo base_url();?>bootstrap/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="<?php echo base_url();?>bootstrap/css/adminlte.min.css">
+    
 
+    <link rel="stylesheet" href="<?php echo base_url();?>bootstrap/template/jquery-ui/jquery-ui.css">
+      <!-- Ionicons -->
+    <link rel="stylesheet" href="<?php echo base_url();?>bootstrap/template/Ionicons/css/ionicons.min.css">
+     <!-- DataTables -->
+    <link rel="stylesheet" href="<?php echo base_url();?>bootstrap/template/datatables.net-bs/css/dataTables.bootstrap.min.css">
+    <!-- DataTables Export-->
+    <link rel="stylesheet" href="<?php echo base_url();?>bootstrap/template/datatables-export/css/buttons.dataTables.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="<?php echo base_url();?>bootstrap/template/font-awesome/css/font-awesome.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="<?php echo base_url();?>bootstrap/template/dist/css/AdminLTE.min.css">
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+    folder instead of downloading all of them to reduce the load. -->
+    <link rel="stylesheet" href="<?php echo base_url();?>bootstrap/template/dist/css/skins/_all-skins.min.css">
 </head>
 
 <body id="page-top">

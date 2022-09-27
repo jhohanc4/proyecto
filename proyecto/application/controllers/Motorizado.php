@@ -10,7 +10,7 @@ class Motorizado extends CI_Controller {
 
 		$this->load->view('inc/headersbadmin2');
 		$this->load->view('inc/menu');
-		$this->load->view('listamot',$data);
+		$this->load->view('lista/listamot',$data);
 		$this->load->view('inc/footersbadmin2');
 	}
 
@@ -19,7 +19,7 @@ class Motorizado extends CI_Controller {
 
 		$this->load->view('inc/headersbadmin2');
 		$this->load->view('inc/menu');
-		$this->load->view('formulariomot');
+		$this->load->view('formulario/formulariomot');
 		$this->load->view('inc/footersbadmin2');
 	}
 
@@ -49,7 +49,7 @@ class Motorizado extends CI_Controller {
 
 		$this->load->view('inc/headersbadmin2');
 		$this->load->view('inc/menu');
-		$this->load->view('formulariomodificarmotorizado',$data);
+		$this->load->view('formulario/formulariomodificarmotorizado',$data);
 		$this->load->view('inc/footersbadmin2');
 	}
 
@@ -84,7 +84,7 @@ class Motorizado extends CI_Controller {
 
 		$this->load->view('inc/headersbadmin2');
 		$this->load->view('inc/menu');
-		$this->load->view('listadeshabilitadosmot',$data);
+		$this->load->view('lista/listadeshabilitadosmot',$data);
 		$this->load->view('inc/footersbadmin2');
 	}
 
@@ -97,16 +97,10 @@ class Motorizado extends CI_Controller {
 		redirect('motorizado/deshabilitados','refresh');
 	}
 
-	public function prueba()
-	{
-		$this->load->view('inc/headersbadmin2');
-		$this->load->view('index');
-		$this->load->view('inc/footersbadmin2');
-	}
 	public function registrarmotbd()
 	{
 		$this->load->view('inc/headersbadmin2');
-		$this->load->view('formularioregistrarvehiculo');
+		$this->load->view('formulario/formularioregistrarvehiculo');
 		$this->load->view('inc/footersbadmin2');
 	}
 }
